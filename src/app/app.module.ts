@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     LiveListComponent
   ],
   imports: [
+    FlexLayoutModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
