@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { MatChipsModule } from '@angular/material/chips';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -12,14 +13,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './views/home/home.component';
 import { LiveListComponent } from './views/home/live-list/live-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LiveListComponent
+    LiveListComponent,
+    LocalDateTimePipe
   ],
   imports: [
+    MatChipsModule,
     FlexLayoutModule,
     HttpClientModule,
     BrowserModule,
@@ -30,7 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatTabsModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    LocalDateTimePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
