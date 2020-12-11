@@ -1,8 +1,9 @@
-import { LiveService } from './../../../shared/service/live.service';
+// @ts-ignore
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import * as moment from 'moment';
+import { LiveService } from '../../../../shared/service/live.service';
 
 @Component({
   selector: 'app-live-form-dialog',
@@ -38,7 +39,7 @@ export class LiveFormDialogComponent implements OnInit {
   }
 
   Cancel(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(true);
     this.liveForm.reset();
   }
 

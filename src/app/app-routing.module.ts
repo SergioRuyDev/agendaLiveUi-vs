@@ -1,12 +1,17 @@
-import { HomeComponent } from './views/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   component: HomeComponent
+  // },
+  { path: 'lives', loadChildren: () => import('./views/lives/lives.module').then(m => m.LivesModule) },
   {
     path: '',
-    component: HomeComponent
+    redirectTo: '/lives',
+    pathMatch: 'full'
   }
 ];
 
