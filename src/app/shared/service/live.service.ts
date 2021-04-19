@@ -3,13 +3,14 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ResponsePageable } from '../model/responsePageable.model';
 import { Live } from '../model/live.model';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LiveService {
 
-  apiUrl = 'http://localhost:8080/lives';
+  private apiUrl = environment.apiBaseUrl;
 
   httpOptions = {
     headers: new HttpHeaders({
